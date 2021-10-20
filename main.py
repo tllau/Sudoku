@@ -12,6 +12,15 @@ class SmallBoard(object):
     def board(self, matrix):
         self._board = matrix
         
+    def __str__(self):
+        return '{}'.format(self.board)
+    
+    def __repr__(self):
+        return '{}'.format(self.board)
+        
+    def get_row(self, rn):
+        return self.board[rn]
+        
     def input_number(self, i, j, v):
         if v in range(1,10):
             self._board[i][j] = v
@@ -24,11 +33,12 @@ class SmallBoard(object):
         
         
 class WholeBoard(object):
-    def __init__(self, board=np.zeros((3,3), dtype=SmallBoard)):
+    def __init__(self, board=[[SmallBoard(), SmallBoard(), SmallBoard()] for _ in range(3)]):
         self.board = board
+        print(self.board)
 
 # rn: row_number 0-8    
-    def is_row_valid(self, rn):
+    def is_row_correct(self, rn):
         pass
         
     def is_column_valid(self, cn):
@@ -39,3 +49,4 @@ class WholeBoard(object):
 
 if __name__ == "__main__":
     b = WholeBoard()
+    sb = SmallBoard()
