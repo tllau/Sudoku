@@ -66,11 +66,21 @@ class WholeBoard(object):
         return True
             
         
-    
+ 
 
 if __name__ == "__main__":
     sb = SmallBoard(np.array([[1,2,3], [4,5,6],[7,8,9]], dtype=int))
     b = WholeBoard([[sb, sb, sb] for _ in range(3)])
-    print(b.is_wholeboard_correct())
+    sb1 = SmallBoard(np.array([[8,5,3], [4,9,2],[1,6,7]], dtype=int))
+    sb2 = SmallBoard(np.array([[7,9,6], [1,8,3],[4,5,2]], dtype=int))
+    sb3 = SmallBoard(np.array([[2,4,1], [5,6,7],[9,8,3]], dtype=int))
+    sb4 = SmallBoard(np.array([[5,3,4], [7,2,1],[9,8,6]], dtype=int))
+    sb5 = SmallBoard(np.array([[2,1,7], [8,6,9],[5,3,4]], dtype=int))
+    sb6 = SmallBoard(np.array([[8,9,6], [4,3,5],[7,1,2]], dtype=int))
+    sb7 = SmallBoard(np.array([[3,7,8], [6,4,5],[2,1,9]], dtype=int))
+    sb8 = SmallBoard(np.array([[9,2,1], [3,7,8],[6,4,5]], dtype=int))
+    sb9 = SmallBoard(np.array([[6,5,4], [1,2,9],[3,7,8]], dtype=int))
+    test_b = WholeBoard([[sb1, sb2, sb3], [sb4, sb5,sb6], [sb7, sb8,sb9]])
+    print(test_b.is_wholeboard_correct())
     
     
